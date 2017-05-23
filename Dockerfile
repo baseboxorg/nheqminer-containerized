@@ -1,5 +1,4 @@
-FROM ubuntu:16.04
-MAINTAINER Timo Taskinen <timo.taskinen@iki.fi>
+FROM alpine:latest
 
 RUN apk update && apk add --no-cache cmake build-base boost-dev
 
