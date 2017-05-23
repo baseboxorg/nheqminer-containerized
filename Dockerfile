@@ -1,12 +1,7 @@
 FROM ubuntu:16.04
 MAINTAINER Timo Taskinen <timo.taskinen@iki.fi>
 
-RUN apt-get update && apt-get install -y \
-  cmake \
-  build-essential \
-  libboost-all-dev \
-  git \
-&& rm -rf /var/lib/apt/lists/*
+RUN apk update && apk add --no-cache cmake build-base boost-dev
 
 RUN cd /opt; git clone -b Linux https://github.com/nicehash/nheqminer.git \
  && cd /opt/nheqminer/cpu_xenoncat/Linux/asm/; sh assemble.sh \
